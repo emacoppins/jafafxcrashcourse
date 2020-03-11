@@ -2,6 +2,7 @@ package it.polito.tdp.javafxcrashcourse;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,6 +27,26 @@ public class FXMLController {
 
     @FXML
     private Label lbrisposta;
+
+    @FXML
+    void handleOk(ActionEvent event) {
+    	
+    	String nome = txtnome.getText();
+    
+    	
+    	String etas= txteta.getText();
+    	int eta= Integer.parseInt(etas);
+    	String saluto;
+    	
+    	if(eta<18)
+    		 saluto = " ciaociao raga " + nome + "!";
+    	
+    	else
+    		 saluto = " boonasera " + nome + "!";
+    	
+    	lbrisposta.setText(saluto);
+   
+    }
 
     @FXML
     void initialize() {
