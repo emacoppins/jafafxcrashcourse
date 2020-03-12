@@ -36,15 +36,18 @@ public class FXMLController {
     	String dialogo=null;
     	int eta=0;
     	
-    	if(nome.length()==0)
+    	if(nome.length()==0) {
     		dialogo="devi inserire il nome";
     		lbrisposta.setText(dialogo);
+    		return;
+    		}
     	
     	try{
     		 eta= Integer.parseInt(etas);
     		
     	} catch (NumberFormatException npe) {
     		lbrisposta.setText("l eta non è un numero");
+    		return;
     	}
     	
     	
