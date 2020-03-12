@@ -32,10 +32,22 @@ public class FXMLController {
     void handleOk(ActionEvent event) {
     	
     	String nome = txtnome.getText();
-    
-    	
     	String etas= txteta.getText();
-    	int eta= Integer.parseInt(etas);
+    	String dialogo=null;
+    	int eta=0;
+    	
+    	if(nome==null)
+    		dialogo="devi inserire il nome";
+    		lbrisposta.setText(dialogo);
+    	
+    	try{
+    		 eta= Integer.parseInt(etas);
+    		
+    	} catch (NumberFormatException npe) {
+    		lbrisposta.setText("l eta non è un numero");
+    	}
+    	
+    	
     	String saluto;
     	
     	if(eta<18)
