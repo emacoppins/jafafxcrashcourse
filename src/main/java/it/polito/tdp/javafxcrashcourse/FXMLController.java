@@ -36,7 +36,7 @@ public class FXMLController {
     	String dialogo=null;
     	int eta=0;
     	
-    	if(nome==null)
+    	if(nome.length()==0)
     		dialogo="devi inserire il nome";
     		lbrisposta.setText(dialogo);
     	
